@@ -20,7 +20,6 @@ Below are the screenshots of the `RunDetails` widget showing the runs.
 
 
 ### Results
-More than half of the models reached 100% of accuracy. The classification task is pretty simple.
 *XGBoostClassifier*, *LightGBM*, *Logistic Regression*, *Random Forest*, *ExtremeRandomTrees* are the models that have been tested in combination with different processing such as *StandardScalerWrapper*, *MaxAbsScaler*. More than half of the models reached 100% of accuracy. *RandomForest* and *ExtremeRandomTrees* are the two algorithms that didn't reach 100% accuracy. Moreover *XGBoostClassifier* with a *StandardScalerWrapper* as processing produced models with 100% accuracy but also models with 52% accuracy. It demonstrates the importance of the hyperparameters.  
 
 The model we kept as best is *LightGBM* with *MaxAbsScaler* processing. *min_data_in_leaf* is the only hyperparameter that has been changed from its default value to 20. Below is the screenshot of the best model.  
