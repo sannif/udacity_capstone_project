@@ -12,8 +12,6 @@ import joblib
 import os
 
 
-
-
 run = Run.get_context()
 
 def preprocess(df):

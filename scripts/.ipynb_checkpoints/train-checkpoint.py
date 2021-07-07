@@ -1,5 +1,5 @@
-# from azureml.core import Dataset
-# from azureml.core.run import Run
+from azureml.core import Dataset
+from azureml.core.run import Run
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix
@@ -14,19 +14,18 @@ import os
 
 
 
-# run = Run.get_context()
+run = Run.get_context()
 
 def preprocess(df):
     # Drop columns with a single value
     df_clean = df.drop(['gill-attachment', 'veil-type'], axis=1)
 
-    df_clean['bruises'] = df_clean['bruises'].replace({'t': 1 , 'f': 0})
-    # df_clean['bruises'] = df_clean['bruises'].replace({True: 1 , False: 0})
+    df_clean['bruises'] = df_clean['bruises'].replace({True: 1 , False: 0})
     df_clean['gill-spacing'] = df_clean['gill-spacing'].replace({'c' : 1, 'w' : 0})
     df_clean['gill-size'] = df_clean['gill-size'].replace({'n' : 1, 'b' : 0})
     df_clean['stalk-shape'] = df_clean['stalk-shape'].replace({'e' : 1, 't' : 0})
 
-    # df_clean['class'] = df_clean['class'].replace({"p": 1 , "e": 0})
+#     df_clean['class'] = df_clean['class'].replace({"p": 1 , "e": 0})
     
     # one-hot encoding
     dummy_cols = ['cap-shape', 'cap-surface', 'cap-color', 'odor', 'gill-color', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring',
@@ -45,15 +44,14 @@ def main():
 
    
     args = parser.parse_args()
-    # run.log('Estimators', np.int(args.n_estimators))
-    # run.log('Depth', np.int(args.max_depth))
-    # run.log('Criterion', str(args.criterion))
-    # run.log('Min sample leaf', np.int(args.min_samples_leaf))
+    run.log('Estimators', np.int(args.n_estimators))
+    run.log('Depth', np.int(args.max_depth))
+    run.log('Criterion', str(args.criterion))
+    run.log('Min sample leaf', np.int(args.min_samples_leaf))
 
     # Load data
-    # dataset = Dataset.Tabular.from_delimited_files('https://raw.githubusercontent.com/sannif/udacity_capstone_project/main/dataset/mushrooms.csv')
-    # df = dataset.to_pandas_dataframe()
-    df = pd.read_csv('https://raw.githubusercontent.com/sannif/udacity_capstone_project/main/dataset/mushrooms.csv')
+    dataset = Dataset.Tabular.from_delimited_files('https://raw.githubusercontent.com/sannif/udacity_capstone_project/main/dataset/mushrooms.csv')
+    df = dataset.to_pandas_dataframe()
     df_clean = preprocess(df)
 
     y = df_clean.pop('class')
@@ -61,7 +59,6 @@ def main():
 
     # Split the data
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
-    print(x_train.head(1))
     
     #  Train the model
     model = RandomForestClassifier(n_estimators = args.n_estimators,
@@ -74,7 +71,7 @@ def main():
     # add feature names to the model object
     model.feature_names = list(x.columns.values)
     accuracy = model.score(x_test, y_test)
-    # run.log('accuracy', accuracy)
+    run.log('accuracy', accuracy)
 
     # Save model
     os.makedirs('outputs', exist_ok=True)
