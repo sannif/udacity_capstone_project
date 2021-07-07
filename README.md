@@ -33,6 +33,7 @@ We fit a Random Forest classifier to the data. 4 hyperparameters are tuned:
 * max_depth: the depth of a tree ```choice([5, 6, 7, 8, 9, 10, 15])```
 * criterion: the function to measure the quality of a split ```choice(['gini', 'entropy'])```
 * min_samples_leaf: the minimum number of samples required to be at a leaf node ```choice([1, 2, 3, 4]```  
+
 More information on the role of each hyperparameter can be found here.  
 
 We choose a MedianStoppingPolicy as the termination policy. It permits to stop non promising runs and save costs. A Bayesian sampling is used to sample the hyperparameter space. Finally, we limited the total number of runs to 25.
