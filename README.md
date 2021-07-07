@@ -97,6 +97,9 @@ resp = requests.post(scoring_uri, data=data, headers=headers)
 print(resp.text)
 ```
 
+## Improvement
+The classification problem was quite simple and we already reached 100% of accuracy on a test set. There is no improvement possible on that point. However, for the model deployment, it may be interesting to convert the Sklearn model into ONNX in order to use the `onnxruntime` module.
+
 ## Screen Recording
 We did a screen recording of the project in action that demonstrate:
 - A working model
