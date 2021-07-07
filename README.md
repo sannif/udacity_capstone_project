@@ -36,10 +36,9 @@ We fit a Random Forest classifier to the data. 4 hyperparameters are tuned:
 
 More information on the role of each hyperparameter can be found here.  
 
-We choose a MedianStoppingPolicy as the termination policy. It permits to stop non promising runs and save costs. A Bayesian sampling is used to sample the hyperparameter space. Finally, we limited the total number of runs to 25.
+We choose a *MedianStoppingPolicy* as the termination policy. It permits to stop non promising runs and save costs. A Bayesian sampling is used to sample the hyperparameter space. Finally, we limited the total number of runs to 25.
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 All the runs performed very well with an accuracy between 99.6 and 100%. It seems like the values of the hyperparameters didn't impact much the performance of the models. Below are the screenshots of the `RunDetails` widget and the best model trained with its parameters.
 
 ![run_hyper](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/hyperdrive_run_details.PNG)
@@ -55,9 +54,9 @@ We deploy the best model from Hyperparameter tuning. It is a *Random Forest* mod
 3. Define an inference configuartion
 4. Define the deployment configuration  
 
-The code is available in [this notebook](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/hyperparameter_tuning.ipynb)
+The code is available in the notebook [hyperparameter_tuning.ipynb](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/hyperparameter_tuning.ipynb).
 
-The endpoint can be queried using the piece of code below that comes from the notebook. In addition a demo is done the screen recording video.
+The endpoint can be queried using the piece of code below that comes from the notebook `hyperparameter_tuning.ipynb`. In addition a demo is done in the screencast.
 ```
 service = Webservice(workspace=ws, name="mushroom-service")
 scoring_uri = service.scoring_uri
