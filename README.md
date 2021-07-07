@@ -12,7 +12,6 @@ There are 21 variables and 8124 observations. All the variables are categorical.
 The data is downloaded from [Kaggle](https://www.kaggle.com/uciml/mushroom-classification) and then stored in the folder [dataset](https://github.com/sannif/udacity_capstone_project/blob/bae713dfb6b071da6282cc004f1400e8a8131ffc/dataset/mushrooms.csv). Then, we get a link to the dataset that is used in Azure ML.
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 The AutoML experiment is created and run using the notebook [automl.ipynb](https://github.com/sannif/udacity_capstone_project/blob/bae713dfb6b071da6282cc004f1400e8a8131ffc/automl.ipynb). We choose the accuracy as the primary metric because we have balanced classes. Also, the experiment timeout is set to 20 minutes meaning that the experiment will stop after 20 minutes. We select classification for the task parameter. More details are available in the notebook.  
 Below are the screenshots of the `RunDetails` widget showing the runs.  
 
@@ -21,8 +20,6 @@ Below are the screenshots of the `RunDetails` widget showing the runs.
 
 
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
-
 More than half of the models reached 100% of accuracy. The classification task is pretty simple.
 *XGBoostClassifier*, *LightGBM*, *Logistic Regression*, *Random Forest*, *ExtremeRandomTrees* are the models that have been tested in combination with different processing such as *StandardScalerWrapper*, *MaxAbsScaler*. More than half of the models reached 100% of accuracy. *RandomForest* and *ExtremeRandomTrees* are the two algorithms that didn't reach 100% accuracy. Moreover *XGBoostClassifier* with a *StandardScalerWrapper* as processing produced models with 100% accuracy but also models with 52% accuracy. It demonstrates the importance of the hyperparameters.  
 
@@ -32,7 +29,6 @@ The model we kept as best is *LightGBM* with *MaxAbsScaler* processing. *min_dat
 
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 We fit a Random Forest classifier to the data. 4 hyperparameters are tuned:  
 * n_estimators: the number of trees ```choice([50, 100, 250, 500])```
 * max_depth: the depth of a tree ```choice([5, 6, 7, 8, 9, 10, 15])```
