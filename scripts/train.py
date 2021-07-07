@@ -23,8 +23,6 @@ def preprocess(df):
     df_clean['gill-attachment'] = df_clean['gill-attachment'].replace({'f': 1 , 'a': 0})
     df_clean['gill-size'] = df_clean['gill-size'].replace({'n' : 1, 'b' : 0})
     df_clean['stalk-shape'] = df_clean['stalk-shape'].replace({'e' : 1, 't' : 0})
-
-#     df_clean['class'] = df_clean['class'].replace({"p": 1 , "e": 0})
     
     # one-hot encoding
     dummy_cols = ['cap-shape', 'cap-surface', 'cap-color', 'odor', 'gill-color', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring',
