@@ -43,7 +43,7 @@ All the runs performed very well with an accuracy between 99.6 and 100%. It seem
 
 ![run_hyper](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/hyperdrive_run_details.PNG)
 
-![best_hyper1][https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/best_model.PNG]
+![best_hyper1](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/best_model.PNG)
 
 :[best_hyper2](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/best_hyperdrive_2.PNG)
 
