@@ -106,4 +106,6 @@ print(resp.text)
 We did a screen recording of the project in action that demonstrate:
 - A working model
 - Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+- Demo of a sample request sent to the endpoint and its response.
+
+The screencast is available [here](https://youtu.be/By0VDrHl00I).
