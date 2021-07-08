@@ -1,5 +1,8 @@
 # Udacity capstone project
-In this project, we create two models: one using Azure AutoML and a second one leveraging HyperDrive to tune its hyperparameters.
+In this project, we create two models: one using Azure AutoML and a second one leveraging HyperDrive to tune its hyperparameters. We deploy the best model found by HyperDrive.
+
+## Project setup
+The file `environment.yml`contains the environment details needed to run the project.
 
 ## Dataset
 ### Overview
