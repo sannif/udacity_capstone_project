@@ -12,7 +12,7 @@ There are 21 variables and 8124 observations. All the variables are categorical.
 The data is downloaded from [Kaggle](https://www.kaggle.com/uciml/mushroom-classification) and then stored in the folder [dataset](https://github.com/sannif/udacity_capstone_project/blob/bae713dfb6b071da6282cc004f1400e8a8131ffc/dataset/mushrooms.csv). Then, we get a link to the dataset that is used in Azure ML.
 
 ## Automated ML
-The AutoML experiment is created and run using the notebook [automl.ipynb](https://github.com/sannif/udacity_capstone_project/blob/bae713dfb6b071da6282cc004f1400e8a8131ffc/automl.ipynb). Here are the parameters we chose for the `AutoMLConfig`:
+The AutoML experiment is created and ran using the notebook [automl.ipynb](https://github.com/sannif/udacity_capstone_project/blob/bae713dfb6b071da6282cc004f1400e8a8131ffc/automl.ipynb). Here are the parameters we chose for the `AutoMLConfig`:
 * `task`: it is a classification task
 * `primary_metric`: we choose *accuracy* because we have balanced classes
 * `training_data`: the Mushroom dataset
@@ -23,8 +23,8 @@ The AutoML experiment is created and run using the notebook [automl.ipynb](https
 
 Below are the screenshots of the `RunDetails` widget showing the runs.  
 
-![run_details_automl1](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/run_details_part1.PNG)
-![run_details_automl1](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/run_details_part2.PNG)
+![run_details_automl1](https://github.com/sannif/udacity_capstone_project/blob/b8e2b6d67ff705894c4c491df092ac7b45019767/images/automl_run_details_1.PNG)
+![run_details_automl1](https://github.com/sannif/udacity_capstone_project/blob/b8e2b6d67ff705894c4c491df092ac7b45019767/images/automl_run_details_2.PNG)
 
 
 ### Results
@@ -32,7 +32,9 @@ Below are the screenshots of the `RunDetails` widget showing the runs.
 
 The model we kept as best is *LightGBM* with *MaxAbsScaler* processing. *min_data_in_leaf* is the only hyperparameter that has been changed from its default value to 20. Below is the screenshot of the best model.  
 
-![best_automl](https://github.com/sannif/udacity_capstone_project/blob/68a36537213552cc3147d761afa51fb16cd5c869/images/best_automl_model.PNG)
+![best_automl](https://github.com/sannif/udacity_capstone_project/blob/b8e2b6d67ff705894c4c491df092ac7b45019767/images/automl_best_run.PNG)
+![best_automl2](https://github.com/sannif/udacity_capstone_project/blob/362cb273a3f28ddfbfdb0be0c6c44eca9f8614e8/images/automl_best_model_id.PNG)
+![best_automl_params](https://github.com/sannif/udacity_capstone_project/blob/362cb273a3f28ddfbfdb0be0c6c44eca9f8614e8/images/automl_best_model_params.PNG)
 
 
 ## Hyperparameter Tuning
