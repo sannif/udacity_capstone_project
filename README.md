@@ -13,11 +13,11 @@ The data is downloaded from [Kaggle](https://www.kaggle.com/uciml/mushroom-class
 
 ## Automated ML
 The AutoML experiment is created and run using the notebook [automl.ipynb](https://github.com/sannif/udacity_capstone_project/blob/bae713dfb6b071da6282cc004f1400e8a8131ffc/automl.ipynb). Here are the parameters we chose for the `AutoMLConfig`:
-* task: it is a classification task
-* primary_metric: we choose *accuracy* because we have balanced classes
-* training_data: the Mushroom dataset
-* label_column_name: `class` is the name of the target column
-* featurization is set to `auto`
+* `task`: it is a classification task
+* `primary_metric`: we choose *accuracy* because we have balanced classes
+* `training_data`: the Mushroom dataset
+* `label_column_name`: `class` is the name of the target column
+* `featurization` is set to `auto`
 * We enabled the early stopping by setting `enable_early_stopping` to `True`
 * The experiment timeout is set to 20 minutes meaning that the experiment will stop after 20 minutes
 
